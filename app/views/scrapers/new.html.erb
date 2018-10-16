@@ -1,0 +1,9 @@
+<%= form_for @scraper do |f| %>
+  <%= f.label :keyword, '關鍵字' %>
+  <%= f.text_field :keyword %>
+  <%= f.label :limit, '結果數量' %>
+  <%= f.text_field :limit %>
+  <%= f.select :device, [['桌機', 'pc'], ['手機APP', 'rweb']] %>
+
+  <%= f.submit %>
+<% end %>
