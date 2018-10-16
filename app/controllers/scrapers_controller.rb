@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ScrapersController < ApplicationController
   def new
     @scraper = Scraper.new

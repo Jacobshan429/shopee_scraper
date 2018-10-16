@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Shop < ApplicationRecord
-  validates_uniqueness_of :uid
+  validates :uid, uniqueness: true
 end

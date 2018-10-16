@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/http'
 require 'json'
 class InvalidRequest < StandardError; end
@@ -10,9 +12,9 @@ class HTTP
     uri.query = URI.encode_www_form(params)
     req = Net::HTTP::Get.new(uri)
     req['x-api-source'] = device
-    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true){|http|
+    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
       http.request(req)
-    }
+    end
     parsed_response = JSON.parse(response.body)
     raise InvalidRequest, parsed_response['error']['message'] if response.code != '200'
 

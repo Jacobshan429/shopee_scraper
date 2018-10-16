@@ -1,5 +1,6 @@
-module ApplicationHelper
+# frozen_string_literal: true
 
+module ApplicationHelper
   def client_device(device)
     case device
     when 'pc'
