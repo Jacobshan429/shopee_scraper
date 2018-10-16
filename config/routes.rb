@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   # post '/search', to: 'welcome#search'
   resources :scrapers, only: [:create, :new, :show, :index]
+  resources :shops, only: [:create, :new]
 end

@@ -1,0 +1,21 @@
+<div class="container mt-3">
+  <div class="form_wrapper">
+    <%= form_with model: @shop do |f| %>
+      <div class="row">
+        <div class="col">
+          <%= f.text_field :name, placeholder: '賣場名稱', class: 'form-control' %>
+        </div>
+        <div class="col">
+          <%= f.text_field :uid, placeholder: '賣場編號', class: 'form-control' %>
+        </div>
+        <div class="col">
+          <%= f.submit '追蹤賣場', class: 'btn btn-info' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
