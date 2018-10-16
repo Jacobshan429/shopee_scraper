@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2018_10_16_034231) do
 
-  create_table "scrapers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "scrapers", force: :cascade do |t|
     t.string "keyword"
     t.string "limit"
     t.string "device"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_10_16_034231) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "shops", force: :cascade do |t|
     t.string "name"
     t.string "uid"
     t.datetime "created_at", null: false
