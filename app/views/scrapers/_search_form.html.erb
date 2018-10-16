@@ -1,0 +1,14 @@
+<div class="form-row">
+  <div class="col">
+    <%= f.text_field :keyword, placeholder: '關鍵字', required: true, class: 'form-control' %>
+  </div>
+  <div class="col">
+    <%= f.text_field :limit, placeholder: '結果數量', class: 'form-control', value: 100 %>
+  </div>
+  <div class="col">
+    <%= f.select :device, [['桌機', 'pc'], ['手機APP', 'rweb']], {}, class: 'form-control' %>
+  </div>
+  <div class="col">
+    <%= f.submit '提交', class: 'form-control' %>
+  </div>
+</div>

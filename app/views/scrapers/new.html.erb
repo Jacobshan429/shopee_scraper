@@ -1,9 +1,28 @@
-<%= form_for @scraper do |f| %>
-  <%= f.label :keyword, '關鍵字' %>
-  <%= f.text_field :keyword %>
-  <%= f.label :limit, '結果數量' %>
-  <%= f.text_field :limit %>
-  <%= f.select :device, [['桌機', 'pc'], ['手機APP', 'rweb']] %>
+<div class="container mt-3">
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, class: "alert alert-#{key}", role: 'alert' do %>
+      <%= value %>
+    <% end %>
+  <% end %>
+  <div class="form_wrapper">
+    <%= form_with model: @scraper do |f| %>
+      <%= render 'search_form', f: f %>
+    <% end %>
+  </div>
+  <table class="table result_table">
+    <thead>
+      <tr>
+        <th scope="col">排名</th>
+        <th scope="col">關鍵字</th>
+        <th scope="col">設備</th>
+        <th scope="col">賣場名稱</th>
+        <th scope="col">商品名稱</th>
+        <th scope="col">商品連結</th>
+      </tr>
+    </thead>
+  </table>
+</div>
 
-  <%= f.submit %>
-<% end %>
+
+
+

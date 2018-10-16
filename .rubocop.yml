@@ -1,0 +1,38 @@
+AllCops:
+  TargetRubyVersion: 2.5.1
+  DisplayCopNames: true
+  Include:
+  - Rakefile
+  - config.ru
+  - config/initializer/*
+  - app/**/*
+  Exclude:
+  - db/**/*
+  - bin/*
+  - config/**/*
+  - vendor/ruby/**/*
+  - app/assets/**/*
+  - app/views/**/*
+  - spec/**/*
+  - app/javascript/**/*
+Rails:
+  Enabled: true
+Metrics/MethodLength:
+  Max: 15
+Metrics/BlockLength:
+  Exclude:
+  - spec/**/*_spec.rb
+  - spec/support/*
+Naming/FileName:
+  Exclude:
+  - Gemfile
+  - Guardfile
+  - Capfile
+Style/Documentation:
+  Enabled: false
+Rails/DynamicFindBy:
+  Enabled: false
+Style/ClassVars:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false

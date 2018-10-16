@@ -6,9 +6,14 @@ class ScrapersController < ApplicationController
   def create
     @scraper = Scraper.new(scraper_params)
     if @scraper.save
-      render json: @scraper.search_response
+      @results = @scraper.reformat_response
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+        format.json { render json: @results }
+      end
     else
-      rnder :new
+      render :new
     end
   end
 

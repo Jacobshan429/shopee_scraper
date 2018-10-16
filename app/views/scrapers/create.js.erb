@@ -1,0 +1,5 @@
+<% if @results[0][:error] %>
+  $('.form_wrapper').prepend("<%= j render 'alert' %>")
+<% else %>
+  $('.result_table').append("<%= j render 'result_table', results: @results %>")
+<% end %>

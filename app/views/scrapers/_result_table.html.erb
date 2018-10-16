@@ -1,0 +1,12 @@
+<tbody>
+<% results.each do |result_item| %>
+  <tr>
+    <th scope="row"><%= result_item[:ranking] %></th>
+    <td><%= result_item[:keyword] %></td>
+    <td><%= client_device(result_item[:device]) %></td>
+    <td><%= result_item[:shop_name] %></td>
+    <td><%= result_item[:name] %></td>
+    <td><%= link_to '連結', result_item[:link], target: '_blank' %></td>
+  </tr>
+<% end %>
+</tbody>
